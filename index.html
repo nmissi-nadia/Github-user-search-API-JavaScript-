@@ -4,33 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub User Search</title>
+  <script defer src="script.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body.dark {
+      background-color: #1e293b; /* Dark background */
+      color: #ffffff; /* Light text */
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-b from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-gray-200">
-  <div class="min-h-screen flex flex-col items-center justify-center px-4">
+<body class="bg-gray-100 text-gray-900">
+  <div class="min-h-screen flex flex-col items-center justify-center">
     <!-- Header -->
-    <header class="w-full max-w-2xl flex justify-between items-center py-6 px-4 bg-white dark:bg-gray-800 shadow-md rounded-lg">
-      <h1 class="text-2xl font-extrabold tracking-tight">GitHub User Finder</h1>
+    <header class="flex justify-between items-center w-full max-w-2xl px-4">
+      <h1 class="text-3xl font-bold">devfinder</h1>
       <button id="themeToggle" class="p-2 bg-gray-200 dark:bg-gray-700 rounded-full shadow-md hover:scale-105 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.343 17.657l-1.414 1.414M16.95 16.95l1.414-1.414M6.343 6.343l1.414-1.414"/>
-        </svg>
+        Dark
       </button>
     </header>
 
-    <!-- Search Input -->
-    <main class="w-full max-w-2xl mt-8 bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+    <!-- Search Bar -->
+    <div class="mt-8 w-full max-w-2xl flex">
       <input
-        type="text"
         id="searchInput"
-        placeholder="Type a GitHub username..."
-        class="w-full p-4 text-lg rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring focus:ring-blue-400 dark:focus:ring-blue-600 transition"
+        type="text"
+        placeholder="Search GitHub username..."
+        class="flex-1 p-2 border rounded-l-lg dark:bg-gray-800 dark:text-white dark:border-gray-600 focus:outline-none"
       />
-      <div id="result" class="mt-6">
-        <!-- User data will be injected here -->
-      </div>
-    </main>
+      <button
+        id="searchButton"
+        class="p-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="mt-6 w-full max-w-2xl"></div>
   </div>
-  <script src="/assets/js/app.js"></script>
+  <script defer src="/assets/js/app.js"></script>
 </body>
 </html>
